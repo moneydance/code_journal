@@ -1,0 +1,31 @@
+version: '3.0'
+services:
+  oauth:
+    build: ./
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/api
+      - oauth_node_modules:/api/node_modules
+    command: gulp start --watch
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:5.6.0
+    ports:
+      - 9200:9200
+      - 9300:9300
+    environment:
+      - cluster.name=docker-cluster
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - xpack.security.enabled=false
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+  eventstore:
+    image: eventstore/eventstore
+    ports:
+      - 2113:2113
+      - 1113:1113
+volumes:
+  oauth_node_modules: {}

@@ -1,0 +1,56 @@
+{
+  "name": "angular2Demo",
+  "version": "1.0.0",
+  "author": "Ben Pusey",
+  "description": "Demo for Angular2",
+  "contributors": [
+    {
+      "name": "Ben Pusey",
+      "email": "bpusey@bu.edu"
+    }
+  ],
+  "dependencies": {
+    "@nestjs/common": "^4.0.2",
+    "@nestjs/core": "^4.0.2",
+    "@nestjs/microservices": "^4.0.2",
+    "@nestjs/websockets": "^4.0.2",
+    "@purest/providers": "1.0.1",
+    "apollo-server-express": "1.1.0",
+    "body-parser": "1.17.2",
+    "cors": "^2.8.4",
+    "express-session": "1.15.6",
+    "grant-express": "3.8.0",
+    "graphql": "0.10.5",
+    "jws": "3.1.4",
+    "lodash": "4.17.4",
+    "purest": "3.1.0",
+    "reflect-metadata": "0.1.10",
+    "request": "2.83.0",
+    "request-promise-native": "1.0.5",
+    "rxjs": "5.4.3"
+  },
+  "devDependencies": {
+    "@types/lodash": "4.14.71",
+    "@types/node": "^8.0.28",
+    "@types/handlebars": "4.0.33",
+    "@types/express": "4.0.36",
+    "ts-loader": "2.2.2",
+    "fork-ts-checker-webpack-plugin": "0.2.6",
+    "del": "3.0.0",
+    "gulp": "3.9.1",
+    "gulp-util": "3.0.8",
+    "gulpclass-extendable": "0.0.8",
+    "gulp-sequence": "0.4.6",
+    "ts-node": "^3.3.0",
+    "tslint": "5.2.0",
+    "tslint-config-airbnb": "5.2.1",
+    "tslint-loader": "3.5.3",
+    "typescript": "^2.5.2",
+    "happypack": "4.0.0-beta.1",
+    "webpack": "3.4.1",
+    "webpack-node-externals": "1.6.0",
+    "yargs": "8.0.2",
+    "gulp-nodemon": "2.2.1",
+    "raw-loader": "0.5.1"
+  }
+}
