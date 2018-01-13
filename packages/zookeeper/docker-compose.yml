@@ -1,0 +1,26 @@
+version: '3.0'
+services:
+    web:
+        image: 'elkozmon/zoonavigator-web:latest'
+        ports:
+            - '8000:8000'
+        environment:
+            - API_HOST=api
+            - API_PORT=9000
+            - AUTO_CONNECT_CONNECTION_STRING=zoo
+        links:
+            - api
+            - zoo
+    api:
+        image: 'elkozmon/zoonavigator-api:latest'
+        ports: 
+            - '9000:9000'
+        environment:
+            - SERVER_HTTP_PORT=9000
+    zoo:
+        image: 31z4/zookeeper
+        hostname: zoo1
+        ports:
+            - '2181:2181'
+        environment:
+            - ZOO_STANDALONE_ENABLED=true
