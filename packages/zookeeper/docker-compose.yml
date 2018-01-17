@@ -1,26 +1,20 @@
 version: '3.0'
 services:
-    web:
-        image: 'elkozmon/zoonavigator-web:latest'
+    couchdb:
+        image: 'couchdb:latest'
+        ports:
+            - '5984:5984'
+    vault:
+        image: 'vault:latest'
+        ports:
+            - '8200:8200'
+        volumes:
+            - './config:/vault/config'
+        command: server
+    vault-ui:
+        image: 'djenriquez/vault-ui'
         ports:
             - '8000:8000'
         environment:
-            - API_HOST=api
-            - API_PORT=9000
-            - AUTO_CONNECT_CONNECTION_STRING=zoo
-        links:
-            - api
-            - zoo
-    api:
-        image: 'elkozmon/zoonavigator-api:latest'
-        ports: 
-            - '9000:9000'
-        environment:
-            - SERVER_HTTP_PORT=9000
-    zoo:
-        image: 31z4/zookeeper
-        hostname: zoo1
-        ports:
-            - '2181:2181'
-        environment:
-            - ZOO_STANDALONE_ENABLED=true
+            - 'VAULT_URL_DEFAULT=http://vault:8200'
+        
