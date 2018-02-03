@@ -1,0 +1,9 @@
+{
+  "datacenter": "dc1",
+  "log_level": "ERR",
+  "server": true,
+  "ui" : false,
+  "client_addr": "0.0.0.0",
+  "bind_addr": "0.0.0.0",
+  "bootstrap": true
+}
