@@ -3,15 +3,26 @@
 This is a containerized dev-ops build configured through docker-compose.
 
 ## Install
-Install Docker
-* [OSX](https://www.docker.com/docker-mac)
+Make sure you have a Kubernetes cluster running.
+1. Install helm.
+
+        $ brew install kubernetes-helm
+2. Add Incubator Repo.
+        
+        $ helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubator
+3. install etcd
+
+        $ helm install --name etcd incubator/etcd
+4. install vault
+        $ helm 
+
 ## Run
     $ docker-compose up
 ## Vault
 1. Install vault locally.
     * OSX
-
-            brew install vault
+    
+          $ brew install vault
 2. Set the vault_addr.
     __NOTE:__ Example is for locally hosted instance.
 
