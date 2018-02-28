@@ -1,0 +1,10 @@
+traefik:
+  dashboard:
+    enabled: true
+    domain: brtl.by
+    path: /traefik
+  serviceType: NodePort
+  service:
+    nodePorts:
+      http: 30080
+      https: 30443	
